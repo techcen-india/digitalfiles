@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33027.164
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "dogitalfiles", ".", "{52345882-D980-4E50-AA96-03AD7B3FC19A}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_49218"
+		Debug.AspNetCompiler.PhysicalPath = "D:\Works\dogitalfiles\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49218\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_49218"
+		Release.AspNetCompiler.PhysicalPath = "D:\Works\dogitalfiles\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49218\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "49218"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52345882-D980-4E50-AA96-03AD7B3FC19A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52345882-D980-4E50-AA96-03AD7B3FC19A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {661A798E-2415-4858-8CCB-58F9163ED244}
+	EndGlobalSection
+EndGlobal

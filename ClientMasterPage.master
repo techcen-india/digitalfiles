@@ -1,0 +1,320 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ClientMasterPage.master.cs" Inherits="ClientMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+    <head runat="server">
+
+
+    <meta charset="utf-8" />
+    <title>User Dashboard - Digital Files</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="userassets/images/favicon.ico">
+
+    <!-- Layout config Js -->
+    <script src="../userassets/js/layout.js"></script>
+         <script src="../userassets/js/canvas2image.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="userassets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="userassets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="userassets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="userassets/css/custom.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"> 	</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+             <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" type="text/javascript"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css" /> 
+    
+        
+    <%--  <script type="text/javascript">
+          document.addEventListener("contextmenu", function (event) {
+              event.preventDefault();
+              alert('Right Click is Disabled');
+          }, false);
+      </script>--%>
+
+
+    <script type="text/javascript">
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey && (event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 85 || event.keyCode === 117)) {
+                event.preventDefault();
+            }
+        });
+
+    </script>
+
+    <style>
+
+        .myDiv {
+            display: none;
+            text-align: center;
+        }
+
+            .myDiv img {
+                margin: 0 auto;
+            }
+
+            .myDiv span {
+                text-align: center;
+                background: #ffdede;
+                padding: 6px 10px;
+                display: block;
+                width: 100px;
+                border: 1px solid #d47c7c;
+                margin: 8px auto;
+            }
+
+        #showOne {
+            color: red;
+            border: 1px solid red;
+            padding: 10px;
+        }
+
+        #showTwo {
+            color: green;
+            border: 1px solid green;
+            padding: 10px;
+        }
+
+        #showThree {
+            color: blue;
+            border: 1px solid blue;
+            padding: 10px;
+        }
+
+
+        .deal-count {
+            background-color: #a7910d;
+            color: #fff;
+            padding: 1%;
+        }
+
+
+
+
+        #pagedispay {
+            display: none;
+        }
+    </style>
+
+
+    
+
+
+    <script type="text/javascript">
+        function showDiv() {
+            document.getElementById('welcomeDiv').style.display = "block";
+        }
+    </script>
+
+
+ 
+
+</head>
+      <%-- <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>--%>
+ 
+<body>
+    <form id="form1" runat="server">
+
+       
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+
+
+
+
+
+
+              
+
+                     
+
+                        <!-- App Search-->
+                        <form class="app-search d-none d-md-block">
+
+                            <div class="dropdown-menu dropdown-menu-lg" id="search-dropdown">
+                                <div data-simplebar style="max-height: 320px;">
+                                    <!-- item-->
+                                    <div class="dropdown-header">
+                                        <h6 class="text-overflow text-muted mb-0 text-uppercase">Recent Searches</h6>
+                                    </div>
+
+                                    <div class="dropdown-item bg-transparent text-wrap">
+                                        <a href="index.html" class="btn btn-soft-secondary btn-sm btn-rounded">how to setup <i class="mdi mdi-magnify ms-1"></i></a>
+                                        <a href="index.html" class="btn btn-soft-secondary btn-sm btn-rounded">buttons <i class="mdi mdi-magnify ms-1"></i></a>
+                                    </div>
+                                    <!-- item-->
+
+
+                                    <div class="notification-list">
+                                        <!-- item -->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                            <div class="d-flex">
+                                                <img src="../assets/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                <div class="flex-1">
+                                                    <h6 class="m-0">Angela Bernier</h6>
+                                                    <span class="fs-11 mb-0 text-muted">Manager</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!-- item -->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                            <div class="d-flex">
+                                                <img src="../assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                <div class="flex-1">
+                                                    <h6 class="m-0">David Grasso</h6>
+                                                    <span class="fs-11 mb-0 text-muted">Web Designer</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!-- item -->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                            <div class="d-flex">
+                                                <img src="../assets/images/users/avatar-5.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                <div class="flex-1">
+                                                    <h6 class="m-0">Mike Bunch</h6>
+                                                    <span class="fs-11 mb-0 text-muted">React Developer</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="text-center pt-3 pb-1">
+                                    <a href="pages-search-results.html" class="btn btn-primary btn-sm">View All Results <i class="ri-arrow-right-line ms-1"></i></a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user" src="../assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                    <span class="text-start ms-xl-2">
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Naveen S</span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">User</span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header">Welcome Naveen!</h6>
+<%--                                <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>--%>
+
+                                <a class="dropdown-item" href="Logout"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+         
+      
+
+
+
+
+
+
+
+
+
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+    
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>document.write(new Date().getFullYear())</script> © Digital Files
+                        </div>
+
+                    </div>
+                </div>
+
+
+ 
+    <!-- END layout-wrapper -->
+  
+
+    <!-- Theme Settings -->
+    <!-- JAVASCRIPT -->
+    <script src="../userassets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../userassets/libs/simplebar/simplebar.min.js"></script>
+    <script src="../userassets/libs/node-waves/waves.min.js"></script>
+    <script src="../userassets/libs/feather-icons/feather.min.js"></script>
+    <script src="../userassets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="../userassets/js/plugins.js"></script>
+
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+
+    <script src="../assets/js/app.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#myselection').on('change', function () {
+                var demovalue = $(this).val();
+                $("div.myDiv").hide();
+                $("#show" + demovalue).show();
+            });
+        });
+    </script>
+
+
+  
+
+
+</body>
+</html>
